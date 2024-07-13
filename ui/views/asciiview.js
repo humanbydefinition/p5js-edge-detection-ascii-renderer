@@ -48,9 +48,9 @@ class AsciiView extends EventEmitter {
             view: 'tableRow',
             label: 'upper',
             cells: [
-                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[1], parse: (v) => { this.emit('setEdgeCharacter', { character: v, index: 1 }); return String(v); } },
-                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[0], parse: (v) => { this.emit('setEdgeCharacter', { character: v, index: 0 }); return String(v); } },
-                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[7], parse: (v) => { this.emit('setEdgeCharacter', { character: v, index: 7 }); return String(v); } },
+                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[1], parse: (v) => { if (v.length !== 1) { return; } this.emit('setEdgeCharacter', { character: v, index: 1 }); return String(v); } },
+                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[0], parse: (v) => { if (v.length !== 1) { return; } this.emit('setEdgeCharacter', { character: v, index: 0 }); return String(v); } },
+                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[7], parse: (v) => { if (v.length !== 1) { return; } this.emit('setEdgeCharacter', { character: v, index: 7 }); return String(v); } },
             ],
         });
 
@@ -58,9 +58,9 @@ class AsciiView extends EventEmitter {
             view: 'tableRow',
             label: 'left/right',
             cells: [
-                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[2], parse: (v) => { this.emit('setEdgeCharacter', { character: v, index: 2 }); return String(v); } },
+                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[2], parse: (v) => { if (v.length !== 1) { return; } this.emit('setEdgeCharacter', { character: v, index: 2 }); return String(v); } },
                 { view: 'text', value: "", parse: (v) => String(v) },
-                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[6], parse: (v) => { this.emit('setEdgeCharacter', { character: v, index: 6 }); return String(v); } },
+                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[6], parse: (v) => { if (v.length !== 1) { return; } this.emit('setEdgeCharacter', { character: v, index: 6 }); return String(v); } },
             ],
         });
 
@@ -68,9 +68,9 @@ class AsciiView extends EventEmitter {
             view: 'tableRow',
             label: 'lower',
             cells: [
-                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[3], parse: (v) => { this.emit('setEdgeCharacter', { character: v, index: 3 }); return String(v); } },
-                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[4], parse: (v) => { this.emit('setEdgeCharacter', { character: v, index: 4 }); return String(v); } },
-                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[5], parse: (v) => { this.emit('setEdgeCharacter', { character: v, index: 5 }); return String(v); } },
+                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[3], parse: (v) => { if (v.length !== 1) { return; } this.emit('setEdgeCharacter', { character: v, index: 3 }); return String(v); } },
+                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[4], parse: (v) => { if (v.length !== 1) { return; } this.emit('setEdgeCharacter', { character: v, index: 4 }); return String(v); } },
+                { view: 'text', value: PARAMS.asciiEdgesCharacterSet[5], parse: (v) => { if (v.length !== 1) { return; } this.emit('setEdgeCharacter', { character: v, index: 5 }); return String(v); } },
             ],
         });
     }
