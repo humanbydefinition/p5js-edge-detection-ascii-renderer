@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>p5.js ascii renderer</title>
+
+  <style>
+    /* Apply properties to body and canvas to prevent scrollbars and achieve full screen */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    /* Tweakpane window */
+    .tp-dfwv { 
+      width: 310px !important;
+    }
+
+    /* Hide the p5.Capture container */
+    .p5c-container {
+      display: none !important;
+    }
+
+    /* Fix for misaligned rows in Tweakpane table view */
+    .tp-tablev .tp-rotv_c>* {
+      margin-top: 2px !important;
+    }
+  </style>
+
+  <!-- Import libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/tweakpane@3.1.10/dist/tweakpane.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tweakpane/plugin-essentials@0.1.8/dist/tweakpane-plugin-essentials.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tweakpane-table@0.3.1/dist/tweakpane-table.min.js"></script>
+  <script src="libraries/tweakpane-plugin-infodump-0.3.0.min.js"></script>
+  <script src="libraries/tweakpane-plugin-file-import.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5.capture@1.4.1/dist/p5.capture.umd.min.js"></script>
+
+  <!-- Import utility classes -->
+  <script src="utilities/colortranslator.js"></script>
+
+  <!-- Import grid class -->
+  <script src="grid2d.js"></script>
+
+  <!-- Import character set class -->
+  <script src="characterset.js"></script>
+
+  <!-- Import overlay classes -->
+  <script src="ui/overlay.js"></script>
+  <script src="ui/eventemitter.js"></script>
+  <script src="/ui/views/generalview.js"></script>
+  <script src="/ui/views/asciiview.js"></script>
+  <script src="/ui/controllers/generalcontroller.js"></script>
+  <script src="/ui/controllers/asciicontroller.js"></script>
+</head>
+
+<body>
+  <script src="sketch.js"></script>
+</body>
+
+</html>
