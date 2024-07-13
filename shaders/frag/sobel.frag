@@ -69,7 +69,7 @@ void main() {
         } else if(angleDeg >= -112.5f && angleDeg < -67.5f) {
             edgeColor = vec3(0.8f, 0.8f, 0.8f); // "|"
         } else if(angleDeg >= -67.5f && angleDeg < -22.5f) {
-            edgeColor = vec3(0.9f, 1.0f, 1.0f); // "\"
+            edgeColor = vec3(0.9f, 0.9f, 0.9f); // "\"
         }
     }
 
