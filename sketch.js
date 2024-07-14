@@ -3,7 +3,7 @@
  * @author humanbydefinition (on github | instagram)
  * @date 07/2024
  *
- * @repository https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer
+ * @repository https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer
  *
  * @brief This is the main entry point for the p5.js brightness and edge ascii renderer using glsl shaders.
  * 
