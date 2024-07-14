@@ -2,7 +2,9 @@
 
 ![header](https://github.com/humanbydefinition/p5js-ascii-renderer/blob/main/assets/repository_media/logo_gif.gif)
 
-### intro (todo)
+This repository contains a rendering pipeline implemented in [`p5.js`](https://p5js.org/), that converts an input buffer into an ASCII representation based on the brightness and edge detection of the input buffer. The renderer is highly customizable and allows for adjustments of various parameters during runtime, such as font size, character set, colors, and more.
+
+The project is inspired and based on the ideas and concepts shown in the YouTube video "[`I Tried Turning Games Into Text`](https://www.youtube.com/watch?v=gg40RWiaHRY)" by [`Acerola`](https://github.com/GarrettGunnell).
 
 <hr/>
 
@@ -14,10 +16,17 @@ If there are any questions regarding this project, feel free to reach out to me 
 **Note:** The demo _should_ work on all types of devices and screens. **Let me know if you experience any issues!**
 
 ## Features
-todo
+- `🎮 Control` Adjust parameters during run-time through an overlay.
+- `🎬 Capture` Capture and export the canvas into various image formats, aswell as videos in gif- or webm-format.
+- `🎨 Customize` Upload your own fonts & customize font size, character set, colors and more during run-time.
+- `♻️ Re-use` Import and export presets in [`JSON`](https://en.wikipedia.org/wiki/JSON)-format for re-use.
 
 ## Structure
-todo
+- [`/`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/): Contains [`index.html`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/blob/main/index.html), [`sketch.js`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/blob/main/sketch.js), [`characterset.js`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/blob/main/characterset.js) _(used for creating a 2D texture from a font file)_, and [`grid2d.js`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/blob/main/grid2d.js) _(used for managing grid dimensions)_.
+- [`libraries/`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/tree/main/libraries): Contains libraries unavailable on CDNs like [jsdelivr.com](https://jsdelivr.com/), that are redistributable under the MIT License.
+- [`shaders/`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/tree/main/shaders/ascii): Contains the GLSL shaders necessary for the rendering loop.
+- [`ui/`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/tree/main/ui): Contains the code for the Tweakpane user interface.
+- [`utilities/`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/tree/main/utilities): Contains utility functions, specifically for translating color formats.
 
 ## Installation
 To get started with the p5.js ASCII Renderer, follow these steps to set up a local or remote web server and run the project:
