@@ -121,7 +121,7 @@ class Overlay {
             * **[Tweakpane Infodump Plugin](https://github.com/doersino/tweakpane-plugin-infodump):** a plugin for Tweakpane that adds markdown support to infodump blades
             * **[Tweakpane File Import Plugin](https://github.com/LuchoTurtle/tweakpane-plugin-file-import):** a plugin for Tweakpane that adds file import support
             * **[Tweakpane Table Plugin](https://github.com/amir-arad/tweakpane-table):** a plugin for Tweakpane that adds table support
-            * **[p5.Capture](https://github.com/tapioca24/p5.capture):** a library to capture canvas-based animations
+            * **[p5.Capture](https://github.com/tapioca24/p5.capture):** a library to capture canvas-based animations`,
             markdown: true,
         });
 
