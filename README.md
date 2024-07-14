@@ -1,4 +1,4 @@
-# p5.js brightness & edge ascii renderer
+# p5.js brightness based ascii renderer with edge detection
 
 ![header](https://github.com/humanbydefinition/p5js-ascii-renderer/blob/main/assets/repository_media/logo_gif.gif)
 
@@ -22,23 +22,23 @@ If there are any questions regarding this project, feel free to reach out to me 
 - `♻️ Re-use` Import and export presets in [`JSON`](https://en.wikipedia.org/wiki/JSON)-format for re-use.
 
 ## Structure
-- [`/`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/): Contains [`index.html`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/blob/main/index.html), [`sketch.js`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/blob/main/sketch.js), [`characterset.js`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/blob/main/characterset.js) _(used for creating a 2D texture from a font file)_, and [`grid2d.js`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/blob/main/grid2d.js) _(used for managing grid dimensions)_.
-- [`libraries/`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/tree/main/libraries): Contains libraries unavailable on CDNs like [jsdelivr.com](https://jsdelivr.com/), that are redistributable under the MIT License.
-- [`shaders/`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/tree/main/shaders/ascii): Contains the GLSL shaders necessary for the rendering loop.
-- [`ui/`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/tree/main/ui): Contains the code for the Tweakpane user interface.
-- [`utilities/`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/tree/main/utilities): Contains utility functions, specifically for translating color formats.
+- [`/`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/): Contains [`index.html`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/blob/main/index.html), [`sketch.js`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/blob/main/sketch.js), [`characterset.js`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/blob/main/characterset.js) _(used for creating a 2D texture from a font file)_, and [`grid2d.js`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/blob/main/grid2d.js) _(used for managing grid dimensions)_.
+- [`libraries/`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/tree/main/libraries): Contains libraries unavailable on CDNs like [jsdelivr.com](https://jsdelivr.com/), that are redistributable under the MIT License.
+- [`shaders/`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/tree/main/shaders/ascii): Contains the GLSL shaders necessary for the rendering loop.
+- [`ui/`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/tree/main/ui): Contains the code for the Tweakpane user interface.
+- [`utilities/`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/tree/main/utilities): Contains utility functions, specifically for translating color formats.
 
 ## Installation
 To get started with the p5.js ASCII Renderer, follow these steps to set up a local or remote web server and run the project:
 1. **Clone the Repository**:
     ```
-    git clone https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer.git
-    cd p5js-brightness-and-edge-ascii-renderer
+    git clone https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer.git
+    cd p5js-edge-detection-ascii-renderer
     ```
 2. **Set Up a Web Server**:
     - For local development, you need a web server to run the project. Refer to the [p5.js Wiki](https://github.com/processing/p5.js/wiki/Local-server) for detailed instructions on setting up a local server.
 3. **Open the Project**:
-    - Once the server is set up, open [`index.html`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/blob/main/index.html) in your browser to see the renderer in action.
+    - Once the server is set up, open [`index.html`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/blob/main/index.html) in your browser to see the renderer in action.
 
 _Personally, as described in the above wiki article, I recommend using [VS Code](https://code.visualstudio.com/) with the [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) for a smooth development experience._
 
@@ -79,9 +79,9 @@ Feel free to test your favorite fonts, but keep in mind that the current impleme
 **If you have font suggestions to share, I'd love to hear them! 😊**
 
 ## Contributing
-Contributions are welcome. Please [`open an issue`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/issues) or [`submit a pull request`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/pulls) on GitHub.
+Contributions are welcome. Please [`open an issue`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/issues) or [`submit a pull request`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/pulls) on GitHub.
 
 ## License
-This project is licensed under the MIT License. See the [`LICENSE`](https://github.com/humanbydefinition/p5js-brightness-and-edge-ascii-renderer/blob/main/LICENSE) file for more details.
+This project is licensed under the MIT License. See the [`LICENSE`](https://github.com/humanbydefinition/p5js-edge-detection-ascii-renderer/blob/main/LICENSE) file for more details.
 
 
