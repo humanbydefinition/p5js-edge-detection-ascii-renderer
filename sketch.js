@@ -169,8 +169,6 @@ function draw() {
 	shader(sampleShader);
 	sampleShader.setUniform('u_image', sobelFramebuffer);
 	sampleShader.setUniform('u_gridCellDimensions', [grid.cols, grid.rows]);
-	sampleShader.setUniform('u_gridPixelDimensions', [grid.width, grid.height]);
-	sampleShader.setUniform('u_gridOffsetDimensions', [grid.offsetX, grid.offsetY]);
 	sampleShader.setUniform('u_threshold', PARAMS.sobelSampleThreshold);
 	rect(0, 0, windowWidth, windowHeight);
 	sobelSampleFramebuffer.end();
@@ -204,6 +202,8 @@ function draw() {
 	asciiShader.setUniform('u_sketchTexture', sketchFramebuffer); // Used for coloring the edge characters
 	asciiShader.setUniform('u_asciiBrightnessTexture', asciiBrightnessFramebuffer); // If no edge is present, apply the pixel from the brightness ascii buffer
 	asciiShader.setUniform('u_gridCellDimensions', [grid.cols, grid.rows]);
+	asciiShader.setUniform('u_gridPixelDimensions', [grid.width, grid.height]);
+	asciiShader.setUniform('u_gridOffsetDimensions', [grid.offsetX, grid.offsetY]);
 	asciiShader.setUniform('u_characterColor', ColorTranslator.hexToShaderColor(PARAMS.asciiEdgesCharacterColor));
 	asciiShader.setUniform('u_characterColorMode', PARAMS.asciiEdgesCharacterColorMode);
 	asciiShader.setUniform('u_backgroundColor', ColorTranslator.hexToShaderColor(PARAMS.asciiEdgesBackgroundColor));
