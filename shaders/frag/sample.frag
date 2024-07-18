@@ -15,12 +15,13 @@ vec3 colorHistogram[MAX_HISTOGRAM_SIZE];
 int countHistogram[MAX_HISTOGRAM_SIZE];
 
 void main() {
+    vec2 bufferDimensions = u_gridCellDimensions;
     vec2 imageDimensions = vec2(textureSize(u_image, 0));
-    vec2 gridCellDimensions = vec2(imageDimensions.x / u_gridCellDimensions.x, imageDimensions.y / u_gridCellDimensions.y);
+    vec2 gridCellDimensions = vec2(imageDimensions.x / bufferDimensions.x, imageDimensions.y / bufferDimensions.y);
 
     ivec2 coords = ivec2(gl_FragCoord.xy);
-    int gridX = coords.x  / int(gridCellDimensions.x);
-    int gridY = coords.y / int(gridCellDimensions.y);
+    int gridX = coords.x;
+    int gridY = coords.y;
 
     ivec2 cellOrigin = ivec2(gridX * int(gridCellDimensions.x), gridY * int(gridCellDimensions.y));
     int histogramIndex = 0;

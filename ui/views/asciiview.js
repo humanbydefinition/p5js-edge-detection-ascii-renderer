@@ -30,7 +30,7 @@ class AsciiView extends EventEmitter {
         }).on('change', (ev) => { this.emit("updateFont", { fontFileInput: ev.value }) });
 
         this.asciiCommonFolder.addInput(PARAMS, 'asciiFontSize', {
-            label: 'font size', options: { 2: 2, 4: 4, 8: 8, 16: 16, 32: 32 }
+            label: 'font size', options: { 2: 2, 4: 4, 8: 8, 16: 16, 32: 32, 64: 64, 128: 128 }
         }).on('change', (ev) => { this.emit("setFontSize", ev.value); });
     }
 

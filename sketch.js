@@ -120,11 +120,11 @@ function setup() {
 
 	grid = new Grid({ cellWidth: edgesCharacterSet.maxGlyphDimensions.width, cellHeight: edgesCharacterSet.maxGlyphDimensions.height });
 
-	sketchFramebuffer = createFramebuffer({ format: FLOAT, width: grid.width, height: grid.height });
-	sobelFramebuffer = createFramebuffer({ format: FLOAT, width: grid.width, height: grid.height });
-	sobelSampleFramebuffer = createFramebuffer({ format: FLOAT, width: grid.width, height: grid.height });
-	asciiBrightnessFramebuffer = createFramebuffer({ format: FLOAT, width: grid.width, height: grid.height });
-	asciiEdgesFramebuffer = createFramebuffer({ format: FLOAT, width: grid.width, height: grid.height });
+	sketchFramebuffer = createFramebuffer({ format: FLOAT });
+	sobelFramebuffer = createFramebuffer({ format: FLOAT });
+	sobelSampleFramebuffer = createFramebuffer({ format: FLOAT, width: grid.cols, height: grid.rows });
+	asciiBrightnessFramebuffer = createFramebuffer({ format: FLOAT });
+	asciiEdgesFramebuffer = createFramebuffer({ format: FLOAT });
 
 	displayFramebuffer = asciiEdgesFramebuffer; // Set the canvas buffer to the ascii framebuffer by default
 
@@ -169,6 +169,8 @@ function draw() {
 	shader(sampleShader);
 	sampleShader.setUniform('u_image', sobelFramebuffer);
 	sampleShader.setUniform('u_gridCellDimensions', [grid.cols, grid.rows]);
+	sampleShader.setUniform('u_gridPixelDimensions', [grid.width, grid.height]);
+	sampleShader.setUniform('u_gridOffsetDimensions', [grid.offsetX, grid.offsetY]);
 	sampleShader.setUniform('u_threshold', PARAMS.sobelSampleThreshold);
 	rect(0, 0, windowWidth, windowHeight);
 	sobelSampleFramebuffer.end();
@@ -181,6 +183,8 @@ function draw() {
 	asciiShader.setUniform('u_totalChars', brightnessCharacterSet.characters.length);
 	asciiShader.setUniform('u_sketchTexture', sketchFramebuffer); // Used for coloring the ascii characters and determining the character based on brightness
 	asciiShader.setUniform('u_gridCellDimensions', [grid.cols, grid.rows]);
+	asciiShader.setUniform('u_gridPixelDimensions', [grid.width, grid.height]);
+	asciiShader.setUniform('u_gridOffsetDimensions', [grid.offsetX, grid.offsetY]);
 	asciiShader.setUniform('u_characterColor', ColorTranslator.hexToShaderColor(PARAMS.asciiBrightnessCharacterColor));
 	asciiShader.setUniform('u_characterColorMode', PARAMS.asciiBrightnessCharacterColorMode);
 	asciiShader.setUniform('u_backgroundColor', ColorTranslator.hexToShaderColor(PARAMS.asciiBrightnessBackgroundColor));
@@ -210,8 +214,8 @@ function draw() {
 	asciiEdgesFramebuffer.end();
 
 	// Draw the selected framebuffer to the canvas
-	background(0); // Clear the canvas (covers the outer window edges that might not be covered due to the grid size being smaller than the window maybe)
-	image(displayFramebuffer, (-windowWidth / 2) + grid.offsetX, (-windowHeight / 2) + grid.offsetY);
+	background(255); // Clear the canvas (covers the outer window edges that might not be covered due to the grid size being smaller than the window maybe)
+	image(displayFramebuffer, -windowWidth / 2, -windowHeight / 2);
 
 	if (PARAMS.recordingActive) { // If recording is active, update the elapsed time
 		const captureTimerElement = document.querySelector('.p5c-counter');  // Get the capture timer element
@@ -235,16 +239,12 @@ function windowResized() {
 }
 
 /**
- * Resizes the framebuffers when the grid dimensions change.
+ * Resizes the sample framebuffer when the grid dimensions change.
  * @function resizeFramebuffers
  * @global
  */
 function resizeFramebuffers() {
-	sketchFramebuffer.resize(grid.width, grid.height);
-	sobelFramebuffer.resize(grid.width, grid.height);
-	sobelSampleFramebuffer.resize(grid.width, grid.height);
-	asciiBrightnessFramebuffer.resize(grid.width, grid.height);
-	asciiEdgesFramebuffer.resize(grid.width, grid.height);
+	sobelSampleFramebuffer.resize(grid.cols, grid.rows);
 }
 
 /**
